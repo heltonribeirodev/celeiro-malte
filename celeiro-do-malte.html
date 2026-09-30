@@ -1,0 +1,1476 @@
+<title>Celeiro do Malte — Chopes Artesanais · Bacacheri, Curitiba</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Celeiro do Malte — 8 anos de chopes artesanais no Bacacheri, Curitiba. Rótulos próprios, torneiras rotativas e o ambiente mais aconchegante da cidade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CELEIRO DO MALTE — v3 · Design profissional e sofisticado
+   Bebas Neue (display) · Inter (body)
+   Dark · Âmbar · Rústico moderno
+============================================================ */
+
+:root {
+  --ink:       #2E1A0A;
+  --ink-2:     #38200C;
+  --ink-3:     #42270F;
+  --ink-4:     #4D2E13;
+  --amber:     #CC7E30;
+  --amber-lt:  #E0974A;
+  --amber-dim: rgba(204,126,48,.12);
+  --cream:     #FCF6ED;
+  --cream-2:   #F4EBDA;
+  --cream-3:   #EAE0C8;
+  --wood:      #8B5E30;
+  --wood-dim:  rgba(139,94,48,.15);
+  --muted:     rgba(252,246,237,.52);
+  --border-d:  rgba(204,126,48,.16);
+  --border-l:  rgba(139,94,48,.16);
+  --ff-d: 'Bebas Neue', system-ui, sans-serif;
+  --ff-b: 'Inter', system-ui, sans-serif;
+  --r:    2px;
+  --max:  1200px;
+  --pad:  clamp(20px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ff-b);
+  background: var(--ink);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { max-width: 100%; display: block; }
+
+/* Scroll offset for fixed nav */
+[id] { scroll-margin-top: 80px; }
+
+/* ============================================================
+   TYPOGRAPHY SCALE
+============================================================ */
+.ff-d  { font-family: var(--ff-d); }
+.eyebrow {
+  font-family: var(--ff-b);
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--amber);
+}
+.eyebrow-line {
+  display: flex; align-items: center; gap: 14px;
+}
+.eyebrow-line::before {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--amber); opacity: .5;
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--ff-b);
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  padding: 13px 28px; border-radius: var(--r);
+  transition: background .2s, transform .15s, box-shadow .2s, color .2s, border-color .2s;
+}
+.btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn-amber {
+  background: var(--amber); color: var(--ink);
+}
+.btn-amber:hover {
+  background: var(--amber-lt);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232,154,60,.28);
+}
+.btn-outline-dark {
+  border: 1.5px solid rgba(246,237,216,.18); color: var(--muted);
+}
+.btn-outline-dark:hover { border-color: var(--amber); color: var(--amber); }
+.btn-outline-light {
+  border: 1.5px solid var(--border-l); color: var(--wood);
+}
+.btn-outline-light:hover { border-color: var(--wood); color: var(--ink); }
+.btn-wpp {
+  background: #25D366; color: #fff;
+}
+.btn-wpp:hover {
+  background: #1fba58;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37,211,102,.3);
+}
+.btn-dark {
+  background: var(--ink); color: var(--cream);
+}
+.btn-dark:hover { background: var(--ink-3); }
+
+/* ============================================================
+   NAVIGATION
+============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--pad);
+  transition: background .35s, border-color .35s, backdrop-filter .35s;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(11,8,5,.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: var(--border-d);
+}
+.nav-logo {
+  font-family: var(--ff-d);
+  font-size: 1.45rem; letter-spacing: .06em;
+  color: var(--amber); flex-shrink: 0;
+}
+.nav-links {
+  display: flex; gap: 36px; list-style: none;
+}
+.nav-links a {
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted);
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--amber); }
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-burger {
+  display: none; flex-direction: column; justify-content: center;
+  gap: 5px; padding: 6px; background: none;
+}
+.nav-burger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--muted); transition: .25s;
+}
+.nav-mob {
+  display: none; position: fixed;
+  inset: 0; top: 72px; z-index: 190;
+  background: rgba(11,8,5,.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  flex-direction: column;
+  padding: 48px var(--pad);
+  border-top: 1px solid var(--border-d);
+}
+.nav-mob.open { display: flex; }
+.nav-mob a {
+  font-family: var(--ff-d);
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  letter-spacing: .04em;
+  color: rgba(246,237,216,.5);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-d);
+  transition: color .2s;
+}
+.nav-mob a:hover { color: var(--amber); }
+.nav-mob .mob-cta {
+  margin-top: 28px; border-bottom: none;
+  font-family: var(--ff-b);
+  font-size: .85rem; color: var(--amber); letter-spacing: .12em;
+}
+@media(max-width:860px) { .nav-links { display: none; } }
+@media(max-width:640px) { .nav-right .btn { display: none; } }
+@media(max-width:860px) { .nav-burger { display: flex; } }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  position: relative; min-height: 100svh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 100px var(--pad) 80px;
+  overflow: hidden;
+}
+/* Ambient background */
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 40%, rgba(232,154,60,.07) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 35% at 15% 85%, rgba(91,53,27,.5) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 45% at 85% 15%, rgba(140,80,25,.12) 0%, transparent 55%);
+  pointer-events: none;
+}
+/* Film grain */
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23g)' opacity='.055'/%3E%3C/svg%3E");
+  pointer-events: none; opacity: .6;
+}
+.hero-inner { position: relative; z-index: 1; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .62rem; font-weight: 700;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 28px;
+}
+.hero-tag::before, .hero-tag::after {
+  content: ''; display: block;
+  width: 24px; height: 1px;
+  background: var(--amber); opacity: .5;
+}
+.hero-h1 {
+  font-family: var(--ff-d);
+  font-size: clamp(4.8rem, 13vw, 11rem);
+  line-height: .9; letter-spacing: .03em;
+  color: var(--cream);
+}
+.hero-h1 .amber { color: var(--amber); }
+.hero-h1 .sub-line {
+  display: block;
+  font-size: clamp(1.6rem, 4vw, 3.5rem);
+  letter-spacing: .1em;
+  color: rgba(246,237,216,.38);
+  margin-top: 4px;
+}
+.hero-rule {
+  width: 1px; height: 52px; margin: 28px auto;
+  background: linear-gradient(to bottom, transparent, var(--amber), transparent);
+}
+.hero-sub {
+  font-size: clamp(.9rem, 2vw, 1.05rem);
+  font-weight: 400; line-height: 1.85;
+  color: rgba(246,237,216,.5);
+  max-width: 440px; margin: 0 auto 36px;
+}
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero-scroll {
+  position: absolute; bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 7px;
+  font-size: .6rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(246,237,216,.25);
+  animation: scrollbounce 2.4s ease-in-out infinite;
+  z-index: 1;
+}
+.hero-scroll svg { width: 14px; height: 14px; }
+@keyframes scrollbounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: .4; }
+  50%       { transform: translateX(-50%) translateY(8px); opacity: .8; }
+}
+
+/* ============================================================
+   STATS STRIP
+============================================================ */
+.strip {
+  background: var(--ink-2);
+  border-top: 1px solid var(--border-d);
+  border-bottom: 1px solid var(--border-d);
+}
+.strip-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 var(--pad);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+@media(max-width:560px) { .strip-inner { grid-template-columns: repeat(2, 1fr); } }
+.strip-item {
+  padding: 32px 16px; text-align: center;
+  border-right: 1px solid var(--border-d);
+}
+.strip-item:last-child { border-right: none; }
+@media(max-width:560px) {
+  .strip-item:nth-child(2) { border-right: none; }
+  .strip-item:nth-child(3) { border-right: 1px solid var(--border-d); }
+}
+.strip-num {
+  font-family: var(--ff-d);
+  font-size: clamp(2.6rem, 5.5vw, 4rem);
+  line-height: 1; letter-spacing: .03em;
+  color: var(--amber);
+}
+.strip-label {
+  font-size: .62rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted); margin-top: 6px;
+}
+
+/* ============================================================
+   SHARED SECTION UTILS
+============================================================ */
+.sec { padding-block: clamp(72px, 11vw, 128px); }
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--pad); }
+.sec-hd { margin-bottom: clamp(44px, 7vw, 80px); }
+.sec-hd.center { text-align: center; }
+.sec-hd.center .sec-sub { margin-inline: auto; }
+.sec-title {
+  font-family: var(--ff-d);
+  font-size: clamp(3rem, 7.5vw, 6.5rem);
+  line-height: .9; letter-spacing: .03em;
+  margin-top: 12px;
+}
+.sec-sub {
+  font-size: 1rem; line-height: 1.85;
+  color: var(--muted); max-width: 520px;
+  margin-top: 14px;
+}
+
+/* Reveal animation */
+[data-r] {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+[data-r].on { opacity: 1; transform: none; }
+[data-r="1"] { transition-delay: .1s; }
+[data-r="2"] { transition-delay: .2s; }
+[data-r="3"] { transition-delay: .3s; }
+[data-r="4"] { transition-delay: .4s; }
+
+/* ============================================================
+   SOBRE (CREAM / LIGHT)
+============================================================ */
+.sobre { background: var(--cream); color: var(--ink); }
+.sobre .eyebrow { color: var(--wood); }
+.sobre .sec-title { color: var(--ink); }
+.sobre .sec-sub { color: var(--wood); }
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 96px);
+  align-items: start;
+}
+@media(max-width:720px) { .sobre-grid { grid-template-columns: 1fr; } }
+.sobre-body p {
+  font-size: 1rem; line-height: 1.9;
+  color: #5B3A1A; margin-bottom: 18px;
+}
+.sobre-pull {
+  font-family: var(--ff-d);
+  font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  line-height: 1.1; letter-spacing: .03em;
+  color: var(--ink);
+  border-left: 3px solid var(--amber);
+  padding-left: 22px; margin: 32px 0;
+}
+.sobre-meta {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--border-l);
+  border: 1px solid var(--border-l);
+  margin-top: 8px;
+}
+.sobre-meta-item {
+  background: var(--cream-2); padding: 24px 22px;
+}
+.sobre-meta-item strong {
+  font-family: var(--ff-d); font-size: 2rem;
+  letter-spacing: .03em; color: var(--amber); display: block;
+}
+.sobre-meta-item span {
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--wood); margin-top: 4px; display: block;
+}
+
+/* ============================================================
+   CERVEJAS (DARK)
+============================================================ */
+.cervejas { background: var(--ink); }
+.cervejas-intro {
+  display: flex; align-items: flex-end;
+  gap: clamp(20px, 4vw, 48px); margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+.cervejas-big-num {
+  font-family: var(--ff-d);
+  font-size: clamp(7rem, 18vw, 15rem);
+  line-height: .85; letter-spacing: -.01em;
+  color: var(--amber); flex-shrink: 0;
+}
+.cervejas-intro-text { padding-bottom: 12px; }
+.cervejas-intro-text h2 {
+  font-family: var(--ff-d);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: .95; letter-spacing: .03em;
+  margin-top: 12px;
+}
+.cervejas-intro-text p {
+  font-size: .92rem; line-height: 1.8;
+  color: var(--muted); margin-top: 14px; max-width: 360px;
+}
+/* Beer cards */
+.cerv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--border-d);
+  border: 1px solid var(--border-d);
+}
+.cerv-card {
+  background: var(--ink-2);
+  padding: clamp(24px, 4.5vw, 40px);
+  position: relative; overflow: hidden;
+  transition: background .25s;
+}
+.cerv-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--amber), var(--amber-lt));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.cerv-card:hover { background: var(--ink-3); }
+.cerv-card:hover::after { transform: scaleX(1); }
+.cerv-tipo {
+  font-size: .62rem; font-weight: 700;
+  letter-spacing: .25em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 12px;
+}
+.cerv-nome {
+  font-family: var(--ff-d); font-size: 2.4rem;
+  letter-spacing: .03em; line-height: 1;
+  margin-bottom: 14px;
+}
+.cerv-desc {
+  font-size: .88rem; line-height: 1.8; color: var(--muted);
+}
+.cerv-tag {
+  display: inline-block; margin-top: 18px;
+  font-size: .6rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  padding: 5px 11px; border-radius: 2px;
+  background: var(--amber-dim); color: var(--amber);
+  border: 1px solid rgba(232,154,60,.22);
+}
+.cervejas-note {
+  margin-top: 20px; padding: 16px 20px;
+  background: var(--ink-2); border-left: 2px solid var(--amber);
+  font-size: .83rem; line-height: 1.7; color: var(--muted);
+}
+
+/* ============================================================
+   CARDÁPIO (CREAM)
+============================================================ */
+.cardapio { background: var(--cream); color: var(--ink); }
+.cardapio .eyebrow { color: var(--wood); }
+.cardapio .sec-title { color: var(--ink); }
+.tab-row {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border-l);
+  margin-bottom: 44px; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.tab-row::-webkit-scrollbar { display: none; }
+.tab-btn {
+  font-family: var(--ff-b);
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  padding: 13px 22px; color: var(--wood);
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  white-space: nowrap; transition: color .2s, border-color .2s;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--amber); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Chopes — numbered list */
+.chopes-list { display: flex; flex-direction: column; }
+.chope-row {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 20px; align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-l);
+}
+.chope-row:last-child { border-bottom: none; }
+.chope-n {
+  font-family: var(--ff-d); font-size: 2.6rem;
+  line-height: 1; letter-spacing: .03em;
+  color: rgba(91,53,27,.18); text-align: right;
+  padding-top: 2px;
+}
+.chope-info h3 {
+  font-family: var(--ff-d); font-size: 1.65rem;
+  letter-spacing: .03em; line-height: 1; color: var(--ink);
+}
+.chope-info .type {
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--wood); margin-top: 4px;
+}
+.chope-info .desc {
+  font-size: .87rem; line-height: 1.65;
+  color: #6B4A25; margin-top: 8px;
+}
+.chope-price {
+  font-family: var(--ff-d); font-size: 1.5rem;
+  letter-spacing: .03em; color: var(--amber);
+  white-space: nowrap; padding-top: 2px;
+}
+.confirm { color: rgba(122,85,53,.5); font-family: var(--ff-b); font-size: .62rem; }
+
+/* Food grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1px; background: var(--border-l);
+  border: 1px solid var(--border-l);
+}
+.menu-item {
+  background: var(--cream-2); padding: 22px 24px;
+  transition: background .15s;
+}
+.menu-item:hover { background: var(--cream-3); }
+.menu-name {
+  font-family: var(--ff-d); font-size: 1.45rem;
+  letter-spacing: .03em; color: var(--ink); margin-bottom: 7px;
+}
+.menu-desc { font-size: .83rem; line-height: 1.7; color: #6B4A25; }
+.menu-price { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--wood); margin-top: 10px; }
+.tab-empty { padding: 32px 0; font-size: .92rem; line-height: 1.75; color: var(--wood); }
+.cardapio-note {
+  margin-top: 22px; padding: 13px 18px;
+  background: rgba(122,85,53,.06);
+  border-left: 2px solid var(--amber);
+  font-size: .82rem; line-height: 1.7; color: var(--wood);
+}
+
+/* ============================================================
+   EXPERIÊNCIA (DARK)
+============================================================ */
+.exp { background: var(--ink-2); }
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1px; background: var(--border-d);
+  border: 1px solid var(--border-d);
+}
+.exp-card {
+  background: var(--ink-3); padding: clamp(28px, 5vw, 48px);
+  transition: background .22s;
+}
+.exp-card:hover { background: var(--ink-4); }
+.exp-icon { width: 38px; height: 38px; color: var(--amber); margin-bottom: 22px; }
+.exp-card h3 {
+  font-family: var(--ff-d); font-size: 1.8rem;
+  letter-spacing: .03em; line-height: 1;
+  color: var(--cream); margin-bottom: 14px;
+}
+.exp-card p { font-size: .88rem; line-height: 1.8; color: var(--muted); }
+
+/* ============================================================
+   GALERIA
+============================================================ */
+.galeria { background: var(--ink); padding-bottom: clamp(64px, 10vw, 112px); }
+.galeria-grid {
+  display: grid; gap: 2px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media(min-width:860px)  { .cerv-grid { grid-template-columns: repeat(4, 1fr); } }
+@media(min-width:580px)  { .galeria-grid { grid-template-columns: repeat(3, 1fr); } }
+@media(min-width:900px)  { .galeria-grid { grid-template-columns: repeat(4, 1fr); } }
+.gal-cell {
+  aspect-ratio: 1;
+  background: var(--ink-2);
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(204,126,48,.06);
+}
+.gal-cell img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .55s cubic-bezier(.4,0,.2,1);
+  display: block;
+}
+.gal-cell:hover img { transform: scale(1.07); }
+.gal-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 14px 10px;
+  background: linear-gradient(to top, rgba(20,10,2,.72) 0%, transparent 100%);
+  font-size: .55rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255,242,220,.82);
+  z-index: 1;
+}
+.gal-cell.wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+/* ============================================================
+   REVIEWS (CREAM)
+============================================================ */
+.reviews { background: var(--cream-2); color: var(--ink); }
+.reviews .eyebrow { color: var(--wood); }
+.reviews .sec-title { color: var(--ink); }
+.rating-banner {
+  display: flex; align-items: center; gap: 12px;
+  padding: 22px 28px; border-radius: var(--r);
+  background: var(--cream); border: 1px solid var(--border-l);
+  flex-shrink: 0; align-self: flex-start;
+  margin-bottom: 40px;
+}
+.rating-big {
+  font-family: var(--ff-d); font-size: 4.5rem;
+  line-height: 1; letter-spacing: -.01em; color: var(--ink);
+}
+.rating-side { display: flex; flex-direction: column; gap: 5px; }
+.stars { display: flex; gap: 2px; }
+.stars span { color: var(--amber); font-size: .9rem; }
+.rating-count {
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--wood);
+}
+.reviews-intro { font-size: 1rem; line-height: 1.85; color: #5B3A1A; max-width: 400px; margin-bottom: 40px; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1px; background: var(--border-l);
+  border: 1px solid var(--border-l);
+}
+.review-card { background: var(--cream); padding: 28px; }
+.review-stars { display: flex; gap: 2px; margin-bottom: 14px; }
+.review-stars span { color: var(--amber); font-size: .85rem; }
+.review-q { font-size: .92rem; line-height: 1.78; color: #4A3010; font-style: italic; }
+.review-who {
+  margin-top: 18px; font-size: .65rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--wood);
+}
+
+/* ============================================================
+   LOCALIZAÇÃO (DARK)
+============================================================ */
+.loc { background: var(--ink-3); }
+.loc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(44px, 7vw, 88px); align-items: start;
+}
+@media(max-width:760px) { .loc-grid { grid-template-columns: 1fr; } }
+.loc-rows { display: flex; flex-direction: column; }
+.loc-row {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 0; border-bottom: 1px solid var(--border-d);
+}
+.loc-row:last-of-type { border-bottom: none; }
+.loc-ico { width: 20px; height: 20px; color: var(--amber); flex-shrink: 0; margin-top: 2px; }
+.loc-label {
+  font-size: .6rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 5px;
+}
+.loc-val { font-size: .95rem; color: var(--cream); line-height: 1.6; }
+.loc-val a { color: var(--amber); }
+.loc-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.map-ph {
+  aspect-ratio: 4/3;
+  background: var(--ink-2);
+  border: 1.5px dashed rgba(232,154,60,.18);
+  border-radius: var(--r);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px; text-align: center; padding: 28px;
+  color: rgba(232,154,60,.32);
+  box-shadow: inset 0 0 0 1px rgba(232,154,60,.05);
+}
+.map-ph svg { width: 44px; height: 44px; opacity: .3; }
+.map-ph p {
+  font-size: .66rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  line-height: 1.8;
+}
+.map-ph a {
+  color: var(--amber); font-size: .75rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  text-decoration: underline; text-underline-offset: 4px;
+}
+
+/* ============================================================
+   INSTAGRAM (CREAM)
+============================================================ */
+.insta { background: var(--cream); text-align: center; }
+.insta .eyebrow { color: var(--wood); }
+.insta-handle {
+  font-family: var(--ff-d);
+  font-size: clamp(3.2rem, 9vw, 7.5rem);
+  letter-spacing: -.005em; line-height: .9;
+  color: var(--ink); margin: 10px 0 8px;
+}
+.insta-handle .at { color: var(--amber); }
+.insta-tag { font-size: .95rem; color: var(--wood); margin-bottom: 36px; }
+.insta-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 4px; max-width: 480px; margin: 0 auto 32px;
+}
+@media(min-width:600px) { .insta-grid { grid-template-columns: repeat(6, 1fr); max-width: 640px; } }
+.insta-cell {
+  aspect-ratio: 1; border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(122,85,53,.3);
+  transition: transform .22s, color .22s;
+}
+.insta-cell:nth-child(odd)  { background: var(--cream-2); }
+.insta-cell:nth-child(even) { background: #E9DCBE; }
+.insta-cell:hover { transform: scale(.93); color: rgba(91,53,27,.55); }
+.insta-cell svg { width: 22px; height: 22px; opacity: .55; transition: opacity .22s; }
+.insta-cell:hover svg { opacity: .85; }
+
+/* ============================================================
+   CTA FINAL (VERY DARK)
+============================================================ */
+.cta-final {
+  background: var(--ink-2);
+  text-align: center; position: relative; overflow: hidden;
+  border-top: 1px solid var(--border-d);
+}
+.cta-final::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 65% 55% at 50% 50%, rgba(232,154,60,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-final-inner { position: relative; z-index: 1; }
+.cta-title {
+  font-family: var(--ff-d);
+  font-size: clamp(3.8rem, 11vw, 9.5rem);
+  line-height: .88; letter-spacing: .03em;
+  color: var(--cream); margin-bottom: 16px;
+}
+.cta-title .hl { color: var(--amber); }
+.cta-sub {
+  font-size: 1rem; line-height: 1.85;
+  color: var(--muted); max-width: 380px;
+  margin: 0 auto 40px;
+}
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer { background: #1A0E04; padding-block: 44px; }
+.footer-in {
+  max-width: var(--max); margin: 0 auto;
+  padding-inline: var(--pad);
+  display: flex; flex-wrap: wrap; gap: 20px;
+  justify-content: space-between; align-items: center;
+}
+.footer-logo {
+  font-family: var(--ff-d); font-size: 1.4rem;
+  letter-spacing: .06em; color: var(--amber);
+}
+.footer-info { font-size: .75rem; color: rgba(246,237,216,.25); line-height: 1.65; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-links a {
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(246,237,216,.25);
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--amber); }
+.footer-copy {
+  width: 100%; text-align: center;
+  font-size: .65rem; color: rgba(246,237,216,.12);
+  border-top: 1px solid rgba(246,237,216,.05);
+  padding-top: 24px; margin-top: 8px;
+}
+
+/* ============================================================
+   WHATSAPP FLOAT
+============================================================ */
+.wpp-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 300;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.35);
+  transition: transform .22s, box-shadow .22s;
+}
+.wpp-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.45); }
+.wpp-float svg { width: 27px; height: 27px; }
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  [data-r] { opacity: 1; transform: none; }
+}
+</style>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav" id="nav" aria-label="Navegação principal">
+  <a class="nav-logo" href="#" aria-label="Celeiro do Malte — início">Celeiro do Malte</a>
+  <ul class="nav-links" role="list">
+    <li><a href="#cervejas">Cervejas</a></li>
+    <li><a href="#cardapio">Cardápio</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#localizacao">Localização</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn btn-amber" href="https://wa.me/55CONFIRMAR" target="_blank" rel="noopener">Reservar mesa</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="nav-mob" id="nav-mob" aria-label="Menu mobile">
+  <a href="#cervejas"    onclick="closeMob()">Cervejas</a>
+  <a href="#cardapio"    onclick="closeMob()">Cardápio</a>
+  <a href="#sobre"       onclick="closeMob()">Sobre</a>
+  <a href="#localizacao" onclick="closeMob()">Localização</a>
+  <a class="mob-cta" href="https://wa.me/55CONFIRMAR" target="_blank" rel="noopener">Reservar mesa →</a>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-inner">
+    <p class="hero-tag">Bacacheri · Curitiba · Desde 2016</p>
+    <h1 class="hero-h1" id="hero-h1">
+      CELEIRO<br>
+      <span class="amber">DO MALTE</span>
+      <span class="sub-line">Chopes artesanais</span>
+    </h1>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="hero-sub">8 anos cultivando o melhor da cultura cervejeira no coração do Bacacheri. Rótulos próprios, torneiras rotativas e ambiente que convida a ficar.</p>
+    <div class="hero-btns">
+      <a class="btn btn-amber" href="#cervejas">Ver nossas cervejas</a>
+      <a class="btn btn-outline-dark" href="#cardapio">Ver cardápio</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M4 10l4 4 4-4"/></svg>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS STRIP
+============================================================ -->
+<div class="strip" aria-label="Números do Celeiro do Malte">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <div class="strip-num">8</div>
+      <div class="strip-label">Anos no Bacacheri</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">11+</div>
+      <div class="strip-label">Torneiras ativas</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">4</div>
+      <div class="strip-label">Rótulos próprios</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">★ 4.8</div>
+      <div class="strip-label">Google Reviews</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SOBRE
+============================================================ -->
+<section id="sobre" class="sec sobre" aria-labelledby="sobre-title">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div data-r>
+        <p class="eyebrow">Nossa história</p>
+        <h2 class="sec-title" id="sobre-title">Oito anos de chope bem tirado</h2>
+        <blockquote class="sobre-pull">"Cerveja boa é aquela que você toma e já pede outra."</blockquote>
+        <div class="sobre-body">
+          <p>O Celeiro do Malte nasceu com uma missão simples: trazer a cultura da cerveja artesanal para o Bacacheri de forma acessível, honesta e com muito caráter.</p>
+          <p>Ao longo de 8 anos, desenvolvemos nossos próprios rótulos — a Helles, a Dunkel, a APA e em breve a IPA — sem abrir mão de uma seleção rotativa com os melhores rótulos do mercado nacional.</p>
+        </div>
+      </div>
+      <div data-r="1">
+        <div class="sobre-meta">
+          <div class="sobre-meta-item">
+            <strong>2016</strong>
+            <span>Fundação</span>
+          </div>
+          <div class="sobre-meta-item">
+            <strong>Caio</strong>
+            <span>Mestre Cervejeiro</span>
+          </div>
+          <div class="sobre-meta-item">
+            <strong>Bacacheri</strong>
+            <span>Curitiba · PR</span>
+          </div>
+          <div class="sobre-meta-item">
+            <strong>Growler</strong>
+            <span>Para levar pra casa</span>
+          </div>
+        </div>
+        <p style="margin-top:22px;font-size:.82rem;line-height:1.75;color:var(--wood);">[CONFIRMAR COM O CLIENTE] — história completa, fundadores, destaques e diferenciais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CERVEJAS
+============================================================ -->
+<section id="cervejas" class="sec cervejas" aria-labelledby="cerv-title">
+  <div class="wrap">
+    <div class="cervejas-intro" data-r>
+      <div class="cervejas-big-num" aria-hidden="true">11</div>
+      <div class="cervejas-intro-text">
+        <p class="eyebrow">Nossas cervejas</p>
+        <h2 id="cerv-title">Torneiras selecionadas</h2>
+        <p>4 rótulos próprios + 7 torneiras rotativas com os melhores rótulos do mercado. Tem pra todos os gostos — do mais suave ao mais intenso.</p>
+      </div>
+    </div>
+    <div class="cerv-grid" role="list">
+      <article class="cerv-card" role="listitem" data-r>
+        <p class="cerv-tipo">Munich Lager</p>
+        <h3 class="cerv-nome">Helles</h3>
+        <p class="cerv-desc">Clara, suave e refrescante. A lager dourada que abre a garganta e fecha a conversa. Receita própria do Celeiro.</p>
+        <span class="cerv-tag">Rótulo Próprio</span>
+      </article>
+      <article class="cerv-card" role="listitem" data-r="1">
+        <p class="cerv-tipo">Munich Dunkel</p>
+        <h3 class="cerv-nome">Dunkel</h3>
+        <p class="cerv-desc">Escura, maltada e com notas de caramelo e chocolate. Para quem sabe que cerveja preta não é amarga — é profunda.</p>
+        <span class="cerv-tag">Rótulo Próprio</span>
+      </article>
+      <article class="cerv-card" role="listitem" data-r="2">
+        <p class="cerv-tipo">American Pale Ale</p>
+        <h3 class="cerv-nome">APA</h3>
+        <p class="cerv-desc">Lúpulo floral e cítrico com corpo equilibrado. Entre a Helles e a IPA, a APA é a escolha de quem quer o melhor dos dois mundos.</p>
+        <span class="cerv-tag">Rótulo Próprio</span>
+      </article>
+      <article class="cerv-card" role="listitem" data-r="3">
+        <p class="cerv-tipo">India Pale Ale</p>
+        <h3 class="cerv-nome">IPA</h3>
+        <p class="cerv-desc">Para os amantes do lúpulo. Amargo, aromático e cheio de caráter. Para comemorar os 8 anos do Celeiro.</p>
+        <span class="cerv-tag">Em Breve</span>
+      </article>
+      <article class="cerv-card" role="listitem" style="grid-column:1/-1;" data-r="4">
+        <p class="cerv-tipo">Torneiras Rotativas</p>
+        <h3 class="cerv-nome" style="font-size:1.6rem;color:var(--muted);">+ 7 torneiras selecionadas</h3>
+        <p class="cerv-desc">A seleção muda conforme a temporada e os novos rótulos que chegam. Pergunte ao Caio o que está na torneira hoje — ele vai te contar com prazer.</p>
+      </article>
+    </div>
+    <div class="cervejas-note">Os chopes das torneiras rotativas variam. Estilos, rótulos e disponibilidade são atualizados pelo estabelecimento. <strong style="color:rgba(246,237,216,.55)">Growlers disponíveis para levar.</strong></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CARDÁPIO
+============================================================ -->
+<section id="cardapio" class="sec cardapio" aria-labelledby="card-title">
+  <div class="wrap">
+    <div class="sec-hd" data-r>
+      <p class="eyebrow">Cardápio</p>
+      <h2 class="sec-title" id="card-title">O que tem no Celeiro</h2>
+      <p class="sec-sub">Preços e disponibilidade a confirmar com o estabelecimento antes da publicação.</p>
+    </div>
+    <div class="tab-row" role="tablist" aria-label="Categorias do cardápio">
+      <button class="tab-btn active" role="tab" aria-selected="true"  onclick="switchTab('chopes')">Chopes</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('comidas')">Comidas</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab('cerv-card')">Cervejas</button>
+    </div>
+
+    <!-- CHOPES -->
+    <div class="tab-panel active" id="tab-chopes" role="tabpanel">
+      <div class="chopes-list">
+        <div class="chope-row">
+          <div class="chope-n">01</div>
+          <div class="chope-info">
+            <h3>Helles</h3>
+            <div class="type">Munich Lager · Rótulo Próprio</div>
+            <div class="desc">Clara e refrescante. Lager dourada com malte suave.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">02</div>
+          <div class="chope-info">
+            <h3>Dunkel</h3>
+            <div class="type">Munich Dunkel · Rótulo Próprio</div>
+            <div class="desc">Escura, maltada, notas de caramelo e chocolate.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">03</div>
+          <div class="chope-info">
+            <h3>APA</h3>
+            <div class="type">American Pale Ale · Rótulo Próprio</div>
+            <div class="desc">Lúpulo floral e cítrico. Corpo equilibrado.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">04</div>
+          <div class="chope-info">
+            <h3>IPA</h3>
+            <div class="type">India Pale Ale · Em breve</div>
+            <div class="desc">Amargo, aromático, cheio de caráter.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row" style="opacity:.6;">
+          <div class="chope-n">+7</div>
+          <div class="chope-info">
+            <h3 style="color:var(--wood)">Torneiras Rotativas</h3>
+            <div class="type">Estilos variados · Seleção atualizada</div>
+            <div class="desc">Mais 7 torneiras com rótulos que variam. Pergunte ao Caio.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+      </div>
+      <div class="cardapio-note">ℹ️ A seleção de chopes nas torneiras rotativas é atualizada periodicamente. Disponibilidade sujeita a alteração.</div>
+    </div>
+
+    <!-- COMIDAS -->
+    <div class="tab-panel" id="tab-comidas" role="tabpanel">
+      <div class="chopes-list">
+        <div class="chope-row">
+          <div class="chope-n">01</div>
+          <div class="chope-info">
+            <h3>Torresmo de Rolo</h3>
+            <div class="type">Petisco · Porção</div>
+            <div class="desc">Torresmo no ponto certo, servido com pepino agridoce. A pedida que não tem erro.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">02</div>
+          <div class="chope-info">
+            <h3>Broa de Centeio</h3>
+            <div class="type">Pão Artesanal</div>
+            <div class="desc">Pão de centeio artesanal com a cara da inspiração germânica da casa.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">03</div>
+          <div class="chope-info">
+            <h3>Bockwurst</h3>
+            <div class="type">Linguiça Bávara</div>
+            <div class="desc">Linguiça bávara suculenta e bem temperada. Para comer com mostarda e sem cerimônia.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">04</div>
+          <div class="chope-info">
+            <h3>Bratwurst</h3>
+            <div class="type">Linguiça Grelhada</div>
+            <div class="desc">A clássica linguiça alemã grelhada na chapa. Simples, direto ao ponto.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">05</div>
+          <div class="chope-info">
+            <h3>Calabresa Acebolada</h3>
+            <div class="type">Petisco · Porção</div>
+            <div class="desc">Calabresa fatiada com bastante cebola. O petisco que nunca vai embora.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">06</div>
+          <div class="chope-info">
+            <h3>Alcatra</h3>
+            <div class="type">Corte Nobre · Grelhado</div>
+            <div class="desc">Corte nobre para quem quer comer bem enquanto bebe bem.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">07</div>
+          <div class="chope-info">
+            <h3>Batatas</h3>
+            <div class="type">Acompanhamento</div>
+            <div class="desc">Fritas ou assadas. Do jeito que a mesa preferir.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">08</div>
+          <div class="chope-info">
+            <h3>Mandioca</h3>
+            <div class="type">Acompanhamento</div>
+            <div class="desc">Cozida ou frita. Daquela que desmantela na boca.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">09</div>
+          <div class="chope-info">
+            <h3>Joelho de Porco Defumado</h3>
+            <div class="type">Eisbein · Prato Principal</div>
+            <div class="desc">O eisbein do Celeiro. Defumado, suculento, para as mesas com mais tempo e apetite.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+      </div>
+      <div class="cardapio-note">ℹ️ Preços e disponibilidade a confirmar com o estabelecimento antes da publicação.</div>
+    </div>
+
+    <!-- CERVEJAS GARRAFA -->
+    <div class="tab-panel" id="tab-cerv-card" role="tabpanel">
+      <div class="chopes-list">
+        <div class="chope-row">
+          <div class="chope-n">01</div>
+          <div class="chope-info">
+            <h3>Colorado Appia</h3>
+            <div class="type">Witbier · Long Neck 355ml</div>
+            <div class="desc">Leve e refrescante com toque de trigo e especiarias. Uma das mais pedidas do Brasil.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">02</div>
+          <div class="chope-info">
+            <h3>Eisenbahn Pale Ale</h3>
+            <div class="type">Pale Ale · Long Neck 355ml</div>
+            <div class="desc">Equilibrada entre malte e lúpulo. Uma clássica da cervejaria catarinense.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">03</div>
+          <div class="chope-info">
+            <h3>Way Beer Hop Lager</h3>
+            <div class="type">Hoppy Lager · Long Neck 355ml</div>
+            <div class="desc">Lager com caráter lupulado. Produzida em Pinhais, aqui do Paraná.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">04</div>
+          <div class="chope-info">
+            <h3>Seasons Dubbel</h3>
+            <div class="type">Belgian Dubbel · 500ml</div>
+            <div class="desc">Escura belga com notas de frutas secas e caramelo. Para quem quer ir além.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">05</div>
+          <div class="chope-info">
+            <h3>Wäls Petroleum</h3>
+            <div class="type">Black IPA · Long Neck 355ml</div>
+            <div class="desc">Escura e lupulada. Uma das mais premiadas cervejas artesanais do país.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+        <div class="chope-row">
+          <div class="chope-n">06</div>
+          <div class="chope-info">
+            <h3>Barn Märzen</h3>
+            <div class="type">Märzen · 500ml</div>
+            <div class="desc">Estilo alemão maltado e âmbar. Perfeita para quem aprecia a tradição bávara.</div>
+          </div>
+          <div class="chope-price">R$ 19,99</div>
+        </div>
+      </div>
+      <div class="cardapio-note">ℹ️ Disponibilidade e rótulos a confirmar com o estabelecimento. A seleção pode variar.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIÊNCIA
+============================================================ -->
+<section class="sec exp" aria-labelledby="exp-title">
+  <div class="wrap">
+    <div class="sec-hd center" data-r>
+      <p class="eyebrow">Por que o Celeiro</p>
+      <h2 class="sec-title" id="exp-title">Mais que um bar</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card" data-r>
+        <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        <h3>Rótulos Próprios</h3>
+        <p>Helles, Dunkel, APA e IPA desenvolvidas com receita exclusiva do Celeiro. Chope que você não encontra em nenhum outro lugar.</p>
+      </div>
+      <div class="exp-card" data-r="1">
+        <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <h3>Seleção Rotativa</h3>
+        <p>Mais 7 torneiras com os melhores rótulos artesanais do mercado. A seleção muda — mas a qualidade não.</p>
+      </div>
+      <div class="exp-card" data-r="2">
+        <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <h3>Ambiente Aconchegante</h3>
+        <p>Um cantinho do Bacacheri com clima rústico e descontraído. O lugar que você chega para uma cerveja e fica para uma conversa.</p>
+      </div>
+      <div class="exp-card" data-r="3">
+        <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <h3>8 Anos de Tradição</h3>
+        <p>Desde 2016 no Bacacheri. Uma história construída copo a copo, com clientes que viraram família e cervejas que viraram tradição.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALERIA
+============================================================ -->
+<section class="sec galeria" aria-label="Galeria de fotos">
+  <div class="wrap">
+    <div class="sec-hd center" data-r>
+      <p class="eyebrow">Galeria</p>
+      <h2 class="sec-title">O Celeiro em imagens</h2>
+      <p class="sec-sub">Cada detalhe do Celeiro, do primeiro chope à última conversa da noite.</p>
+    </div>
+  </div>
+  <div class="galeria-grid" role="list" aria-label="Galeria do Celeiro do Malte">
+    <div class="gal-cell" role="listitem">
+      <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=600&fit=crop&q=80" alt="Ambiente interno do bar" loading="lazy">
+      <span class="gal-label">Ambiente</span>
+    </div>
+    <div class="gal-cell wide" role="listitem">
+      <img src="https://images.unsplash.com/photo-1436076863939-06870fe779c2?w=1200&h=600&fit=crop&q=80" alt="Espaço interno do Celeiro do Malte" loading="lazy">
+      <span class="gal-label">Espaço Interno</span>
+    </div>
+    <div class="gal-cell" role="listitem">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80" alt="Chope artesanal" loading="lazy">
+      <span class="gal-label">Chopes</span>
+    </div>
+    <div class="gal-cell" role="listitem">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop&q=80" alt="Petiscos do bar" loading="lazy">
+      <span class="gal-label">Petiscos</span>
+    </div>
+    <div class="gal-cell" role="listitem">
+      <img src="https://images.unsplash.com/photo-1543007631-283050bb3e8c?w=600&h=600&fit=crop&q=80" alt="Pessoas no bar" loading="lazy">
+      <span class="gal-label">Eventos</span>
+    </div>
+    <div class="gal-cell" role="listitem">
+      <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&h=600&fit=crop&q=80" alt="Rótulos artesanais" loading="lazy">
+      <span class="gal-label">Rótulos</span>
+    </div>
+    <div class="gal-cell" role="listitem">
+      <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?w=600&h=600&fit=crop&q=80" alt="Growlers para viagem" loading="lazy">
+      <span class="gal-label">Growlers</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REVIEWS
+============================================================ -->
+<section class="sec reviews" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="sec-hd" data-r>
+      <p class="eyebrow">O que dizem</p>
+      <h2 class="sec-title" id="rev-title">Avaliações</h2>
+    </div>
+    <div data-r="1">
+      <div class="rating-banner">
+        <div class="rating-big">4.8</div>
+        <div class="rating-side">
+          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <div class="rating-count">[CONFIRMAR] avaliações no Google</div>
+        </div>
+      </div>
+      <p class="reviews-intro">Os clientes falam por nós. Um ambiente que cativa, cervejas que surpreendem e um atendimento que faz querer voltar sempre.</p>
+    </div>
+    <div class="reviews-grid" data-r="2">
+      <div class="review-card">
+        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-q">"[CONFIRMAR COM O CLIENTE] — Depoimento real de cliente a ser adicionado antes da publicação."</p>
+        <p class="review-who">— Cliente · Google Maps</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-q">"[CONFIRMAR COM O CLIENTE] — Segundo depoimento real de cliente a ser adicionado aqui."</p>
+        <p class="review-who">— Cliente · Google Maps</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-q">"[CONFIRMAR COM O CLIENTE] — Terceiro depoimento real de cliente a ser adicionado aqui."</p>
+        <p class="review-who">— Cliente · Google Maps</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LOCALIZAÇÃO
+============================================================ -->
+<section id="localizacao" class="sec loc" aria-labelledby="loc-title">
+  <div class="wrap">
+    <div class="sec-hd" data-r>
+      <p class="eyebrow">Como chegar</p>
+      <h2 class="sec-title" id="loc-title">Venha nos visitar</h2>
+    </div>
+    <div class="loc-grid">
+      <div data-r>
+        <div class="loc-rows">
+          <div class="loc-row">
+            <svg class="loc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div>
+              <div class="loc-label">Endereço</div>
+              <div class="loc-val">[CONFIRMAR ENDEREÇO]<br>Bacacheri, Curitiba — PR</div>
+            </div>
+          </div>
+          <div class="loc-row">
+            <svg class="loc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <div class="loc-label">Horários</div>
+              <div class="loc-val">[CONFIRMAR COM O CLIENTE]<br>Seg–Sex: [horário] · Sáb–Dom: [horário]</div>
+            </div>
+          </div>
+          <div class="loc-row">
+            <svg class="loc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .82h3a2 2 0 012 1.72 17.4 17.4 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.65a16 16 0 006.29 6.29l1.17-1.17a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div>
+              <div class="loc-label">Contato</div>
+              <div class="loc-val"><a href="https://wa.me/55CONFIRMAR" target="_blank">(41) [CONFIRMAR] via WhatsApp</a></div>
+            </div>
+          </div>
+          <div class="loc-row">
+            <svg class="loc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <div>
+              <div class="loc-label">Instagram</div>
+              <div class="loc-val"><a href="https://instagram.com/celeirodomalte" target="_blank">@celeirodomalte</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="loc-btns">
+          <a class="btn btn-amber" href="https://maps.google.com" target="_blank" rel="noopener">Abrir no Google Maps</a>
+          <a class="btn btn-outline-dark" href="https://wa.me/55CONFIRMAR" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="map-ph" data-r="1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <p>MAPA INTERATIVO<br>A SER INCORPORADO</p>
+        <a href="https://maps.google.com" target="_blank" rel="noopener">Ver no Google Maps →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INSTAGRAM
+============================================================ -->
+<section class="sec insta" aria-label="Instagram do Celeiro do Malte">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Nos siga no Instagram</p>
+    <h2 class="insta-handle" data-r="1"><span class="at">@celeiro</span>domalte</h2>
+    <p class="insta-tag" data-r="2">Acompanhe novidades, lançamentos e a vida no Bacacheri.</p>
+    <div class="insta-grid" data-r="3" role="img" aria-label="Prévia do Instagram">
+      <div class="insta-cell" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+      <div class="insta-cell" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+      <div class="insta-cell" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+      <div class="insta-cell" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+      <div class="insta-cell" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+      <div class="insta-cell" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+    </div>
+    <a class="btn btn-dark" href="https://instagram.com/celeirodomalte" target="_blank" rel="noopener" data-r="4" style="margin:0 auto;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Seguir no Instagram
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA FINAL
+============================================================ -->
+<section class="sec cta-final" aria-label="Chamada para ação">
+  <div class="wrap">
+    <div class="cta-final-inner" data-r>
+      <h2 class="cta-title">VENHA TOMAR<br><span class="hl">UM CHOPE</span></h2>
+      <p class="cta-sub">O melhor chope artesanal do Bacacheri está esperando por você.</p>
+      <div class="cta-btns">
+        <a class="btn btn-wpp" href="https://wa.me/55CONFIRMAR" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar mesa
+        </a>
+        <a class="btn btn-outline-dark" href="#cardapio">Ver cardápio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="footer-logo">Celeiro do Malte</div>
+    <div class="footer-info">
+      Bacacheri · Curitiba · PR<br>
+      [CONFIRMAR ENDEREÇO COMPLETO]
+    </div>
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a href="#cervejas">Cervejas</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#localizacao">Localização</a>
+      <a href="https://instagram.com/celeirodomalte" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="footer-copy">© 2024 Celeiro do Malte · Beba com moderação · Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     WHATSAPP FLOAT
+============================================================ -->
+<a class="wpp-float" href="https://wa.me/55CONFIRMAR" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ============================================================
+     JSON-LD
+============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Celeiro do Malte",
+  "description": "Bar especializado em chopes artesanais com rótulos próprios e seleção rotativa no Bacacheri, Curitiba.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "addressCountry": "BR",
+    "streetAddress": "[CONFIRMAR COM O CLIENTE]"
+  },
+  "servesCuisine": "Chopes Artesanais",
+  "priceRange": "$$",
+  "telephone": "[CONFIRMAR COM O CLIENTE]",
+  "sameAs": ["https://www.instagram.com/celeirodomalte/"]
+}
+</script>
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+// Nav scroll class
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Mobile menu
+const burger = document.getElementById('nav-burger');
+const mob    = document.getElementById('nav-mob');
+function closeMob() { mob.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+burger.addEventListener('click', () => {
+  const open = mob.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(open));
+});
+
+// Tab switching
+function switchTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  const panel = document.getElementById('tab-' + id);
+  if (panel) panel.classList.add('active');
+  event.currentTarget.classList.add('active');
+  event.currentTarget.setAttribute('aria-selected','true');
+}
+
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); ro.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('[data-r]').forEach(el => ro.observe(el));
+</script>
